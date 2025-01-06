@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool-pod
+  labels:
+    netology: nginx-multitool
+spec:
+  containers:
+  - name: multitool
+    image: wbitt/network-multitool
+    imagePullPolicy: IfNotPresent
+    ports:
+      - containerPort: 8080
+    env:
+      - name: HTTP_PORT
+        value: "8080"
